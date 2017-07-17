@@ -11,20 +11,20 @@
   }
 }
 
-.features h2 { font-family: Merriweather-Bold, serif; }
+.features features__header { font-family: Merriweather-Bold, serif; }
 
-.features-tea,
-.features-noodle,
-.features-sweet {
+.features__tea,
+.features__noodle,
+.features__sweet {
   margin: {
     top: 60px;
     bottom: 80px;
   }
 }
 
-.features-tea::before,
-.features-noodle::before,
-.features-sweet::before {
+.features__tea::before,
+.features__noodle::before,
+.features__sweet::before {
   display: block;
   width: 100%;
   margin: {
@@ -36,8 +36,8 @@
   content: "";
 }
 
-.features-tea::before { @include sprite(176, -6, 106); }
+.features__tea::before { @include sprite(176, -6, 106); }
 
-.features-noodle::before { @include sprite(5, 5, 87); }
+.features__noodle::before { @include sprite(5, 5, 87); }
 
-.features-sweet::before { @include sprite(102, 2, 64); }
+.features__sweet::before { @include sprite(102, 2, 64); }

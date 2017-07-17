@@ -36,7 +36,7 @@
   background-color: $lightgrey;
 }
 
-.specials__item-description h2 {
+.specials__item-description-header {
   font-family: Merriweather-Bold, serif;
   font-size: 1.125rem;
 
@@ -54,7 +54,7 @@
   }
 }
 
-.specials__item-description strong {
+.specials__item-description-price {
   display: block;
   margin-top: 10px;
   font-family: Merriweather-Bold, serif;

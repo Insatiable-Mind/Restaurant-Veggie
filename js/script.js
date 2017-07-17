@@ -12,7 +12,7 @@
   // var xhttp = new XMLHttpRequest();
   // xhttp.onreadystatechange = function() {
   //   if (this.readyState == 4 && this.status == 200) {
-  //     var $menu = $(".menu__items"),
+  //     var $menu = $(".menu__item"),
   //       json = JSON.parse(this.responseText);
 
   //     showMenuItems("starters");
@@ -29,7 +29,7 @@
 
   //     for(var i = 0; i < Object.keys(json[menuPart]).length; i++) {
   //       $listItem = $("<li class='col-sm-6'></li>");
-  //       $listItem.append("<span class='menu__item'>" + json[menuPart][i].name + "</span>")
+  //       $listItem.append("<span class='menu__item-header'>" + json[menuPart][i].name + "</span>")
   //         .append("<span class='menu__item-price'>" + json[menuPart][i].price + "</span>")
   //         .append("<span class='menu__item-ingredients'>" + json[menuPart][i].ingredients + "</span>")
   //         .appendTo($list);
@@ -38,7 +38,7 @@
   //   }
 
   //   function openMenu(menuPart) {
-  //     $(".menu__" + menuPart).on("click", function(e){
+  //     $(".menu__nav-" + menuPart).on("click", function(e){
   //       e.preventDefault();
   //       $menu.html("");
 
@@ -48,7 +48,7 @@
 
   //       showMenuItems(menuPart);
   //       $(".menu__nav a").removeClass("active");
-  //       $(".menu__" + menuPart).addClass("active");
+  //       $(".menu__nav-" + menuPart).addClass("active");
   //     });
   //   }
   // };

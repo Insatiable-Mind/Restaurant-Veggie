@@ -13,7 +13,7 @@ gulp.task("serve", ["sass"], function() {
   });
 
   gulp.watch("*.html").on("change", browserSync.reload);
-  gulp.watch("sass/*.scss", ["sass"]).on("change", browserSync.reload);
+  gulp.watch("sass/**/*.scss", ["sass"]).on("change", browserSync.reload);
 });
 
 /* Compile Sass into CSS & auto-inject into browsers */

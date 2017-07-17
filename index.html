@@ -21,8 +21,8 @@
   <body>
     <header class="container top-header">
       <div class="row top-header__navmenu-row">
-        <div class="top-header__navmenu col-sm-4 navbar-right">
-          <ul class="flex-wrapper">
+        <div class="top-header__navmenu col-sm-4">
+          <ul class="top-header__navmenu-list">
             <li><a class="active" href="#">Home</a></li>
             <li><a href="#">Specials</a></li>
             <li><a href="#">About</a></li>
@@ -42,8 +42,8 @@
     <main>
       <section class="features container">
         <div class="row">
-          <div class="col-sm-4 features-noodle">
-            <h2>
+          <div class="col-sm-4 features__noodle">
+            <h2 class="features__header">
               Turnip greens
             </h2>
             <p>
@@ -52,7 +52,7 @@
               Aliquam erat volutpat.
             </p>
           </div>
-          <div class="col-sm-4 features-tea">
+          <div class="col-sm-4 features__tea">
             <h2>
               Beetroot water
             </h2>
@@ -62,7 +62,7 @@
               Aliquam erat volutpat.
             </p>
           </div>
-          <div class="col-sm-4 features-sweet">
+          <div class="col-sm-4 features__sweet">
             <h2>
               Get social
             </h2>
@@ -94,11 +94,11 @@
           <div class="col-sm-4 specials__item">
             <img class="specials__item-img" src="img/specials_2.jpg" alt="Greens fava">
             <div class="specials__item-description">
-              <h2>Celery quandong</h2>
+              <h2 class="specials__item-description-header">Celery quandong</h2>
               <span>
                 Lorem ipsum dolor sit <br>
                 Pellentesque vel enim a <br>
-                <strong>17$</strong>
+                <strong class="specials__item-description-price">17$</strong>
               </span>
             </div>
           </div>
@@ -157,7 +157,7 @@
             <h2 class="section-header">
               About us
             </h2>
-            <p>
+            <p class="about__text">
               Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.
             </p>
           </div>
@@ -171,28 +171,28 @@
         <div class="menu__nav">
           <ul class="flex-wrapper">
             <li>
-              <!-- <a class="active menu__starters" href="#" >Starters</a> -->
-              <label class="active" for="menu__starters">Starters</label>
+              <!-- <a class="active menu__nav-starters" href="#" >Starters</a> -->
+              <label class="active" for="menu__nav-starters">Starters</label>
               <input id="menu__starters" type="radio" checked>
             </li>
             <li>
-              <!-- <a class="menu__main-dishes" href="#" >Main Dishes</a> -->
-              <label  class="active" for="menu__main-dishes">Main Dishes</label>
-              <input id="menu__main-dishes" type="radio">
+              <!-- <a class="menu__nav-main-dishes" href="#" >Main Dishes</a> -->
+              <label  class="active" for="menu__nav-main-dishes">Main Dishes</label>
+              <input id="menu__nav-main-dishes" type="radio">
             </li>
             <li>
-              <!-- <a class="menu__desserts" href="#" >Desserts</a> -->
-              <label  class="active" for="menu__desserts">Desserts</label>
+              <!-- <a class="menu__nav-desserts" href="#" >Desserts</a> -->
+              <label  class="active" for="menu__nav-desserts">Desserts</label>
               <input id="menu__desserts" type="radio">
             </li>
             <li>
-              <!-- <a class="menu__drinks" href="#" >Drinks</a> -->
-              <label  class="active" for="menu__drinks">Drinks</label>
+              <!-- <a class="menu__nav-drinks" href="#" >Drinks</a> -->
+              <label  class="active" for="menu__nav-drinks">Drinks</label>
               <input id="menu__drinks" type="radio">
             </li>
           </ul>
         </div>
-        <div class="menu__items row">
+        <div class="menu__item row">
           <!-- Using Ajax for content loading -->
         </div>
       </section>
@@ -200,13 +200,13 @@
 
     <footer class="footer container">
       <div class="row">
-        <div class="contact col-sm-5 pull-right">
-          <h2 class="section-header">
+        <div class="contacts col-sm-5">
+          <h2 class="contacts-header section-header">
             Contact
           </h2>
-          <div class="contact__contacts row">
+          <div class="contacts__address row">
             <div class="col-sm-6">
-              <h2 class="text-uppercase">
+              <h2 class="contacts__address-header">
                 Veggie
               </h2>
               <span>
@@ -216,7 +216,7 @@
             </div>
             <div class="col-sm-6">
               <div>
-                <h2 class="text-uppercase">
+                <h2 class="contacts__address-header">
                   Reservations
                 </h2>
                 <span>
@@ -226,32 +226,32 @@
               </div>
             </div>
           </div>
-          <div class="contact__form">
-            <h2 class="text-uppercase">
+          <div class="contacts__feedback">
+            <h2 class="contacts__feedback-header">
               Contact form
             </h2>
-            <form class="row" action="" method="POST">
+            <form class="contacts__feedback-form row" action="" method="POST">
               <div class="col-sm-6">
-                <input type="text" placeholder="Name">
+                <input class="contacts__feedback-form-field .contacts__feedback-form-field_type_personal-data" type="text" placeholder="Name">
               </div>
               <div class="col-sm-6">
-                <input type="email" placeholder="Email">
-              </div>          
-              <input class="col-sm-12 message" type="text" placeholder="Message">
-              <button class="center-block" type="submit">Send</button>
+                <input class="contacts__feedback-form-field .contacts__feedback-form-field_type_personal-data" type="email" placeholder="Email">
+              </div>
+              <input class="contacts__feedback-form-field contacts__feedback-form-field_type_message col-sm-12" type="text" placeholder="Message">
+              <button class="contacts__feedback-form-button" type="submit">Send</button>
             </form>
           </div>
         </div>
       </div>
-      <div class="row footer-bottom">
+      <div class="row footer__bottom">
         <div class="col-sm-4"></div>
-        <div class="copyright col-sm-4">
+        <div class="footer__bottom-copyright col-sm-4">
           Copyright 2017 © Design by Anna Dadej
         </div>
-        <div class="social col-sm-4">
-          <div class="pull-right">
-            <a class="social__icon facebook" href="https://www.facebook.com/"></a>
-            <a class="social__icon instagram" href="https://www.instagram.com/"></a>
+        <div class="col-sm-4">
+          <div class="footer__bottom-social">
+            <a class="footer__bottom-social-icon footer__bottom-social-icon_type_facebook" href="https://www.facebook.com/"></a>
+            <a class="footer__bottom-social-icon footer__bottom-social-icon_type_instagram" href="https://www.instagram.com/"></a>
           </div>
         </div>
       </div>

@@ -1,0 +1,55 @@
+/* Footer Bottom
+   ========================================================================== */
+
+.footer__bottom {
+  height: 50px;
+  margin-bottom: 30px;
+  line-height: 50px;
+}
+
+.footer__bottom-social {
+  float: right;
+}
+
+.footer__bottom-social-icon {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: {
+    position: center center;
+    size: auto 20px;
+    repeat: no-repeat;
+  }
+  border: 1px solid $grey;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $grey;
+    border-color: transparent;
+    opacity: 0.8;
+    transition: {
+      property: background-image, background-color, border-color;
+      duration: 0.3s;
+      timing-function: ease-in;
+    }
+  }
+}
+
+.footer__bottom-social-icon_type_facebook {
+  margin-right: 15px;
+  background: {
+    size: auto 23px;
+    image: url(../img/icons_facebook.png);
+  }
+
+  &:hover { background-image: url(../img/icons_facebook-hover.png); }
+}
+
+.footer__bottom-social-icon_type_instagram {
+  background: {
+    size: auto 26px;
+    image: url(../img/icons_instagram.png);
+  }
+
+  &:hover { background-image: url(../img/icons_instagram-hover.png); }
+}

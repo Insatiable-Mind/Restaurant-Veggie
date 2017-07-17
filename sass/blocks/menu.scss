@@ -16,7 +16,7 @@
   }
 }
 
-.menu__items li {
+.menu__item {
   display: block;
   margin-bottom: 40px;
   overflow: hidden;
@@ -30,7 +30,7 @@
   }
 }
 
-.menu__item {
+.menu__item-header {
   display: block;
   float: left;
   padding-right: 2px;

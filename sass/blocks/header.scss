@@ -23,7 +23,14 @@
 }
 
 .top-header__navmenu {
+  float: right;
   margin: 0;
+  padding: 0;
+}
+
+.top-header__navmenu-list {
+  display: flex;
+  justify-content: space-between;
   padding: 0;
 }
 

@@ -2,80 +2,80 @@ a:hover, a:focus, a.active {
   border: 1px solid #3c3c3c;
   transition: border 0.65s ease-in; }
 
-.footer .contact__form form input::-webkit-input-placeholder {
+.contacts__feedback-form input::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   font-family: Merriweather-Italic, serif;
   font-size: 1.125rem;
   color: #3c3c3c; }
 
-.footer .contact__form form input::-moz-placeholder {
+.contacts__feedback-form input::-moz-placeholder {
   /* Firefox 19+ */
   font-family: Merriweather-Italic, serif;
   font-size: 1.125rem;
   color: #3c3c3c; }
 
-.footer .contact__form form input:-ms-input-placeholder {
+.contacts__feedback-form input:-ms-input-placeholder {
   /* IE 10+ */
   font-family: Merriweather-Italic, serif;
   font-size: 1.125rem;
   color: #3c3c3c; }
 
-.footer .contact__form form input:-moz-placeholder {
+.contacts__feedback-form input:-moz-placeholder {
   /* Firefox 18- */
   font-family: Merriweather-Italic, serif;
   font-size: 1.125rem;
   color: #3c3c3c; }
 
-.footer .contact__form form input:focus::-webkit-input-placeholder {
+.contacts__feedback-form input:focus::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   opacity: 0.6;
   transition-property: opacity;
   transition-duration: 0.3s;
   transition-timing-function: ease-in; }
 
-.footer .contact__form form input:focus::-moz-placeholder {
+.contacts__feedback-form input:focus::-moz-placeholder {
   /* Firefox 19+ */
   opacity: 0.6;
   transition-property: opacity;
   transition-duration: 0.3s;
   transition-timing-function: ease-in; }
 
-.footer .contact__form form input:focus:-ms-input-placeholder {
+.contacts__feedback-form input:focus:-ms-input-placeholder {
   /* IE 10+ */
   opacity: 0.6;
   transition-property: opacity;
   transition-duration: 0.3s;
   transition-timing-function: ease-in; }
 
-.footer .contact__form form input:focus:-moz-placeholder {
+.contacts__feedback-form input:focus:-moz-placeholder {
   /* Firefox 18- */
   opacity: 0.6;
   transition-property: opacity;
   transition-duration: 0.3s;
   transition-timing-function: ease-in; }
 
-.footer .contact__form form input:hover::-webkit-input-placeholder {
+.contacts__feedback-form input:hover::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   opacity: 0.6;
   transition-property: opacity;
   transition-duration: 0.3s;
   transition-timing-function: ease-in; }
 
-.footer .contact__form form input:hover::-moz-placeholder {
+.contacts__feedback-form input:hover::-moz-placeholder {
   /* Firefox 19+ */
   opacity: 0.6;
   transition-property: opacity;
   transition-duration: 0.3s;
   transition-timing-function: ease-in; }
 
-.footer .contact__form form input:hover:-ms-input-placeholder {
+.contacts__feedback-form input:hover:-ms-input-placeholder {
   /* IE 10+ */
   opacity: 0.6;
   transition-property: opacity;
   transition-duration: 0.3s;
   transition-timing-function: ease-in; }
 
-.footer .contact__form form input:hover:-moz-placeholder {
+.contacts__feedback-form input:hover:-moz-placeholder {
   /* Firefox 18- */
   opacity: 0.6;
   transition-property: opacity;
@@ -198,7 +198,13 @@ a.active {
   font-size: 1.125rem; }
 
 .top-header__navmenu {
+  float: right;
   margin: 0;
+  padding: 0; }
+
+.top-header__navmenu-list {
+  display: flex;
+  justify-content: space-between;
   padding: 0; }
 
 .top-header__promo {
@@ -215,18 +221,18 @@ a.active {
   background-size: contain;
   background-image: url(../img/bg-yellow.png); }
 
-.features h2 {
+.features features__header {
   font-family: Merriweather-Bold, serif; }
 
-.features-tea,
-.features-noodle,
-.features-sweet {
+.features__tea,
+.features__noodle,
+.features__sweet {
   margin-top: 60px;
   margin-bottom: 80px; }
 
-.features-tea::before,
-.features-noodle::before,
-.features-sweet::before {
+.features__tea::before,
+.features__noodle::before,
+.features__sweet::before {
   display: block;
   width: 100%;
   margin-left: auto;
@@ -235,17 +241,17 @@ a.active {
   background: url(../img/spritesheet.png) no-repeat;
   content: ""; }
 
-.features-tea::before {
+.features__tea::before {
   width: 106px;
   height: 79px;
   background-position: -176px 6px; }
 
-.features-noodle::before {
+.features__noodle::before {
   width: 87px;
   height: 79px;
   background-position: -5px -5px; }
 
-.features-sweet::before {
+.features__sweet::before {
   width: 64px;
   height: 79px;
   background-position: -102px -2px; }
@@ -275,10 +281,10 @@ a.active {
   text-align: center;
   background-color: #f8f8f8; }
 
-.specials__item-description h2 {
+.specials__item-description-header {
   font-family: Merriweather-Bold, serif;
   font-size: 1.125rem; }
-  .specials__item-description h2::after {
+  .specials__item-description-header::after {
     display: block;
     width: 35%;
     height: 1px;
@@ -288,7 +294,7 @@ a.active {
     background-image: url(../img/line.png);
     content: ""; }
 
-.specials__item-description strong {
+.specials__item-description-price {
   display: block;
   margin-top: 10px;
   font-family: Merriweather-Bold, serif; }
@@ -307,11 +313,11 @@ a.active {
   background-image: url(../img/about.jpg);
   background-attachment: fixed; }
 
-.about p {
+.about__text {
   position: relative;
   font-size: 1.875rem;
   text-align: center; }
-  .about p::after {
+  .about__text::after {
     position: absolute;
     left: 60%;
     bottom: -200px;
@@ -336,18 +342,18 @@ a.active {
   margin-right: auto;
   margin-bottom: 90px; }
 
-.menu__items li {
+.menu__item {
   display: block;
   margin-bottom: 40px;
   overflow: hidden; }
-  .menu__items li::after {
+  .menu__item::after {
     display: block;
     height: 14px;
     border-bottom: 1px dotted #3c3c3c;
     overflow: hidden;
     content: ""; }
 
-.menu__item {
+.menu__item-header {
   display: block;
   float: left;
   padding-right: 2px;
@@ -380,56 +386,72 @@ a.active {
   background-attachment: fixed;
   background-size: cover; }
 
-.footer .section-header {
+/* ==========================================================================
+   Contacts
+   ========================================================================== */
+.contacts {
+  float: right; }
+
+.contacts-header {
   font-family: Merriweather-Light, serif; }
 
-.footer h2:not(.section-header) {
-  font-size: 1.125rem; }
-
-.footer .contact__contacts {
+/* Contacts Address
+   ========================================================================== */
+.contacts__address {
   margin-bottom: 90px; }
 
-.footer .contact__form {
+.contacts__address-header,
+.contacts__feedback-header {
+  font-size: 1.125rem;
+  text-transform: uppercase; }
+
+/* Contacts Feedback
+   ========================================================================== */
+.contacts__feedback {
   margin-bottom: 190px; }
 
-.footer .contact__form h2 {
+.contacts__feedback-header {
   margin-bottom: 30px;
   padding-left: 0;
   padding-right: 0; }
 
-.footer .contact__form form {
+.contacts__feedback-form {
   margin: 0; }
 
-.footer .contact__form form input {
+.contacts__feedback-form-field {
   height: 30px;
   margin-bottom: 60px;
+  padding: 0;
   background: none;
   border: none;
   border-bottom: 1px solid #3c3c3c; }
-  .footer .contact__form form input:focus {
+  .contacts__feedback-form-field:focus {
     outline: none; }
 
-.footer .contact__form form div {
+.contacts__feedback-form .col-sm-6 {
   padding: 0; }
-  .footer .contact__form form div:first-child {
+  .contacts__feedback-form .col-sm-6:first-child {
     padding-right: 10.5%; }
-  .footer .contact__form form div:nth-child(2) {
+  .contacts__feedback-form .col-sm-6:nth-child(2) {
     padding-left: 10.5%; }
 
-.footer .contact__form form div input {
+.contacts__feedback-form-field_type_personal-data {
   width: 100%;
   padding-left: 15px; }
 
-.footer .contact__form form input.message {
+.contacts__feedback-form-field_type_message {
   margin-bottom: 50px; }
 
-.footer .contact__form form button {
+.contacts__feedback-form-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   padding: 10px 20px;
   color: #3c3c3c;
   background: none;
   border: 1px solid #3c3c3c;
   cursor: pointer; }
-  .footer .contact__form form button:hover {
+  .contacts__feedback-form-button:hover {
     color: #fff;
     background-color: #3c3c3c;
     border-color: transparent;
@@ -438,12 +460,17 @@ a.active {
     transition-duration: 0.3s;
     transition-timing-function: ease-in; }
 
-.footer .footer-bottom {
+/* Footer Bottom
+   ========================================================================== */
+.footer__bottom {
   height: 50px;
   margin-bottom: 30px;
   line-height: 50px; }
 
-.footer .footer-bottom .social__icon {
+.footer__bottom-social {
+  float: right; }
+
+.footer__bottom-social-icon {
   display: inline-block;
   width: 50px;
   height: 50px;
@@ -452,7 +479,7 @@ a.active {
   background-repeat: no-repeat;
   border: 1px solid #3c3c3c;
   cursor: pointer; }
-  .footer .footer-bottom .social__icon:hover {
+  .footer__bottom-social-icon:hover {
     background-color: #3c3c3c;
     border-color: transparent;
     opacity: 0.8;
@@ -460,31 +487,15 @@ a.active {
     transition-duration: 0.3s;
     transition-timing-function: ease-in; }
 
-.footer .footer-bottom .facebook {
+.footer__bottom-social-icon_type_facebook {
   margin-right: 15px;
   background-size: auto 23px;
   background-image: url(../img/icons_facebook.png); }
-  .footer .footer-bottom .facebook:hover {
+  .footer__bottom-social-icon_type_facebook:hover {
     background-image: url(../img/icons_facebook-hover.png); }
 
-.footer .footer-bottom .instagram {
+.footer__bottom-social-icon_type_instagram {
   background-size: auto 26px;
   background-image: url(../img/icons_instagram.png); }
-  .footer .footer-bottom .instagram:hover {
+  .footer__bottom-social-icon_type_instagram:hover {
     background-image: url(../img/icons_instagram-hover.png); }
-
-/* ==========================================================================
-   Layout
-   ========================================================================== */
-.flex-wrapper {
-  display: flex;
-  justify-content: space-between;
-  padding: 0; }
-
-@media (min-width: 1300px) {
-  .contact__contacts::before, .contact__contacts::after {
-    display: table;
-    clear: both;
-    content: ""; }
-  .contact__contacts div:last-child {
-    float: right; } }
