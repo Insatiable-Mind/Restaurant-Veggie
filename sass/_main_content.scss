@@ -12,38 +12,38 @@
     size: contain;
     image: url(../img/bg-yellow.png);
   }
-
-  h2 { font-family: Merriweather-Bold, serif; }
-
-  &-tea,
-  &-noodle,
-  &-sweet {
-    margin: {
-      top: 60px;
-      bottom: 80px;
-    }
-  }
-
-  &-tea::before,
-  &-noodle::before,
-  &-sweet::before {
-    display: block;
-    width: 100%;
-    margin: {
-      left: auto;
-      right: auto;
-      bottom: 25px;
-    }
-    background: url(../img/spritesheet.png) no-repeat;
-    content: "";
-  }
-
-  &-tea::before { @include sprite(176, -6, 106); }
-
-  &-noodle::before { @include sprite(5, 5, 87); }
-
-  &-sweet::before { @include sprite(102, 2, 64); }
 }
+
+.features h2 { font-family: Merriweather-Bold, serif; }
+
+.features-tea,
+.features-noodle,
+.features-sweet {
+  margin: {
+    top: 60px;
+    bottom: 80px;
+  }
+}
+
+.features-tea::before,
+.features-noodle::before,
+.features-sweet::before {
+  display: block;
+  width: 100%;
+  margin: {
+    left: auto;
+    right: auto;
+    bottom: 25px;
+  }
+  background: url(../img/spritesheet.png) no-repeat;
+  content: "";
+}
+
+.features-tea::before { @include sprite(176, -6, 106); }
+
+.features-noodle::before { @include sprite(5, 5, 87); }
+
+.features-sweet::before { @include sprite(102, 2, 64); }
 
 /* Specials
    ========================================================================== */
@@ -53,13 +53,13 @@
   padding-top: 70px;
 
   @for $row from 1 through 2 {
-    &__row-#{$row} {
+    .specials__row-#{$row} {
       .specials__item-description {
         @if $row == 1 {
           float: right;
-          } @else {
-            float: left;
-          }
+        } @else {
+          float: left;
+        }
       }
     }
   }
@@ -160,15 +160,6 @@
     right: auto;
     bottom: 90px;
   }
-}
-
-.menu li > &__main-dishes:hover + li { // <-------- Остановилась здесь. Как сделать переход?
-  background: red;
-  // transition: {
-  //  property: opacity;
-  //  duration: 2s;
-  //  timing-function: ease-in;
-  // }
 }
 
 .menu__items li {
