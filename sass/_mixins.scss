@@ -1,0 +1,37 @@
+@mixin sprite($position-x, $position-y, $width) {
+  width: $width + px; 
+  height: 79px;
+  background-position: (-$position-x + px) (-$position-y + px); 
+}
+
+@mixin animate($name, $duration, $delay) {
+  -webkit-animation-name: $name;
+     -moz-animation-name: $name;
+       -o-animation-name: $name;
+          animation-name: $name;
+
+  -webkit-animation-duration: $duration;
+     -moz-animation-duration: $duration;
+       -o-animation-duration: $duration;
+          animation-duration: $duration;
+
+  -webkit-animation-delay: $delay;
+     -moz-animation-delay: $delay;
+       -o-animation-delay: $delay;
+          animation-delay: $delay;
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} { @content; }
+     @-moz-keyframes #{$animationName} { @content; }
+       @-o-keyframes #{$animationName} { @content; }
+          @keyframes #{$animationName} { @content; }
+}
+
+@include keyframes(showContent) {
+  from { opacity: 0; }
+
+  to { opacity: 1; }
+}
+
+
