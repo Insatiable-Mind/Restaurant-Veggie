@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Specials
+   ========================================================================== */
+
+.specials {
+  margin-bottom: 105px;
+  padding-top: 70px;
+
+  @for $row from 1 through 2 {
+    .specials__row-#{$row} {
+      .specials__item-description {
+        @if $row == 1 {
+          float: right;
+        } @else {
+          float: left;
+        }
+      }
+    }
+  }
+}
+
+.specials__item {
+  height: 250px;
+  padding: 0;
+}
+
+.specials__item-img {
+  width: 50%;
+  height: 100%;
+}
+
+.specials__item-description {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  background-color: $lightgrey;
+}
+
+.specials__item-description h2 {
+  font-family: Merriweather-Bold, serif;
+  font-size: 1.125rem;
+
+  &::after {
+    display: block;
+    width: 35%;
+    height: 1px;
+    margin: {
+      top: 10px;
+      left: auto;
+      right: auto;
+    }
+    background-image: url(../img/line.png);
+    content: "";
+  }
+}
+
+.specials__item-description strong {
+  display: block;
+  margin-top: 10px;
+  font-family: Merriweather-Bold, serif;
+}

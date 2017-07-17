@@ -1,9 +1,12 @@
-@import "variables";
-@import "placeholders";
-@import "mixins";
-@import "basic_styles";
-@import "header";
-@import "main_content";
-@import "footer";
-@import "layout";
+@import "supportive/variables.scss";
+@import "supportive/placeholders.scss";
+@import "supportive/mixins.scss";
+@import "supportive/basic_styles.scss";
+@import "blocks/header.scss";
+@import "blocks/features.scss";
+@import "blocks/specials.scss";
+@import "blocks/about.scss";
+@import "blocks/menu.scss";
+@import "blocks/footer.scss";
+@import "supportive/layout.scss";
 

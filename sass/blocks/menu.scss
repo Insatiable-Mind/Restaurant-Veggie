@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Menu
+   ========================================================================== */
+
+.menu {
+  padding-top: 65px;
+  font-size: 1.125rem;
+}
+
+.menu__nav {
+  width: 30%;
+  margin: {
+    left: auto;
+    right: auto;
+    bottom: 90px;
+  }
+}
+
+.menu__items li {
+  display: block;
+  margin-bottom: 40px;
+  overflow: hidden;
+
+  &::after {
+    display: block;
+    height: 14px;
+    border-bottom: 1px dotted $grey;
+    overflow: hidden;
+    content: "";
+  }
+}
+
+.menu__item {
+  display: block;
+  float: left;
+  padding-right: 2px;
+  text-transform: uppercase;
+}
+
+.menu__item-price {
+  display: block;
+  float: right;
+  padding-left: 2px;
+}
+
+.menu__item-ingredients {
+  display: block;
+  clear: both;
+  font-family: Merriweather-Italic, serif;
+  font-size: 0.875rem;
+}
+
