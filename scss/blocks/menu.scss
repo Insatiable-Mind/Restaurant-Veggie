@@ -1,0 +1,95 @@
+.menu {
+  padding-top: 6.5rem;
+
+  font-size: 1.8rem;
+}
+
+.menu__nav {
+  width: 36%;
+  margin: {
+    left: auto;
+    right: auto;
+    bottom: 9rem;
+  }
+}
+
+.menu__list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.menu__nav-item {
+  font-family: Merriweather-Regular, serif;
+  font-weight: normal;
+  text-align: center;
+
+  border: .1rem solid transparent;
+
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.menu__section {
+  display: none;
+  margin-bottom: 4rem;
+
+  animation: fadeIn .6s ease-in;
+}
+
+.menu__section_active { display: block; }
+
+.menu__item {
+  display: block;
+  margin-bottom: 4rem;
+
+  overflow: hidden;
+}
+
+.menu__item-header {
+  display: flex;
+  width: calc(100% - 3.6rem);
+  float: left;
+  padding-right: .1rem;
+
+  text-transform: uppercase;
+
+  &::after {
+    content: "";
+
+    flex: 1;
+    margin: {
+      left: .7rem;
+      bottom: .6rem;
+    }
+
+    border-bottom: .1rem dotted $grey;
+  }
+}
+
+.menu__item-price {
+  display: block;
+  float: right;
+  padding-left: .2rem;
+}
+
+.menu__item-ingredients {
+  display: block;
+  clear: both;
+
+  font-family: Merriweather-Italic, serif;
+  font-size: 1.4rem;
+}
+

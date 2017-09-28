@@ -1,0 +1,58 @@
+.specials {
+  margin-bottom: 10.5rem;
+  padding-top: 7rem;
+}
+
+.specials__item {
+  height: 25rem;
+  padding: 0;
+}
+
+.specials__item-img {
+  width: 50%;
+  height: 100%;
+}
+
+.specials__item-description {
+  width: 50%;
+  height: 100%;
+
+  text-align: center;
+
+  background-color: $lightgrey;
+
+  .specials__row-1 & {
+    float: right;
+  }
+
+  .specials__row-2 & {
+    float: left;
+  }
+}
+
+.specials__item-description-header {
+  font-family: Merriweather-Bold, serif;
+  font-size: 1.8rem;
+
+  &::after {
+    content: "";
+
+    display: block;
+    width: 35%;
+    height: .1rem;
+    margin: {
+      top: 1rem;
+      left: auto;
+      right: auto;
+    }
+
+    background-image: url(../img/line.png);
+  }
+}
+
+.specials__item-description-price {
+  display: block;
+  margin-top: 1rem;
+
+  font-family: Merriweather-Bold, serif;
+}

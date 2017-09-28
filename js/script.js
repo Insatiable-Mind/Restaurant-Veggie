@@ -1,63 +1,106 @@
 (function(){
-    /* Adding and removing active class for main-nav buttons */
-    $(".main-header__navmenu a").on("click", function(e){
-        e.preventDefault();
+  /*** HEADER ***/
+  /* Adding and removing active class for nav links */
+  $('.top-header__navmenu a').on('click', function(e){
+    // e.preventDefault();
 
-        $(".main-header__navmenu a").removeClass("active");
-        this.addClass("active");
-    });
+    $('.top-header__navmenu a').removeClass('active');
+    $(this).addClass('active');
+  });
+
+  var header = '.top-header__navmenu-row',
+      HeaderTop = $(header).offset().top,
+      hh = HeaderTop + 30;
+
+  /*
+  Changing the top nav bar presentation
+  (function code is not written by myself, I've just changed it slightly
+  for this site)
+  */
+  $(window).scroll(function(){
+    if ( $(window).scrollTop() > HeaderTop ) {
+      if ($(window).scrollTop() > hh) {
+        $(header).css({background:'#f7f7f8'});
+        $('.top-header__navmenu').css({paddingTop: '1rem', paddingBottom: '.5rem'});
+      } else {
+        $('.top-header__navmenu').css({paddingTop: '5.5rem', paddingBottom: '0'});
+      }
+    } else {
+      $(header).css({background:'none'});
+    }
+  });
+
+  /*
+  Smooth scrolling to sections of the site from the top menu
+  (function smoothScroll code is not written by myself, I've just changed it slightly
+  for this site)
+  */
+  smoothScroll('#home');
+  smoothScroll('#specials');
+  smoothScroll('#about');
+  smoothScroll('#menu');
+  smoothScroll('#contact');
+
+  function smoothScroll(target) {
+    $('a[href^="' + target + '"]').bind('click.smoothscroll', function (e) {
+     e.preventDefault();
+
+    var target = this.hash,
+     $target = $(target);
+
+    $('html, body').stop().animate({
+     'scrollTop': $target.offset().top
+     }, 1000, 'swing', function () {
+     window.location.hash = target;
+     });
+  });
+  }
 
 
-    /* Loading menu */
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var $menu = $(".menu__items"),
-                json = JSON.parse(this.responseText);
+  /*** MENU ***/
+  /* Adding and removing active class for nav links */
+  $('.menu__list a').on('click', function(e){
+    e.preventDefault();
 
-            showMenuItems("starters");
+    $('.menu__list a').removeClass('active');
+    $(this).addClass('active');
+  });
 
-            openMenu("starters");
-            openMenu("main-dishes");
-            openMenu("desserts");
-            openMenu("drinks"); 
-        }
+  var navItem = '.menu__nav-item_',
+      starters = 'starters',
+      mainDishes = 'main-dishes',
+      desserts = 'desserts',
+      drinks = 'drinks';
 
-        function showMenuItems(menuPart) {
-            var $list = $("<ul></ul>"),
-                $listItem = null;
+  $(navItem + starters).on('click', function() {
+    showMenuItem(starters);
+  });
+  $(navItem + mainDishes).on('click', function() {
+    showMenuItem(mainDishes);
+  });
+  $(navItem + desserts).on('click', function() {
+    showMenuItem(desserts);
+  });
+  $(navItem + drinks).on('click', function() {
+    showMenuItem(drinks);
+  });
 
-            for(var i = 0; i < Object.keys(json[menuPart]).length; i++) {
-                $listItem = $("<li class='col-sm-6'></li>");
-                $listItem.append("<span class='menu__item'>" + json[menuPart][i].name + "</span>")
-                    .append("<span class='menu__item-price'>" + json[menuPart][i].price + "</span>")
-                    .append("<span class='menu__item-ingredients'>" + json[menuPart][i].ingredients + "</span>")
-                    .appendTo($list);
-                $list.appendTo($menu);
-            }
-        }
+  function showMenuItem(item) {
+    var menuSection = 'menu__section_',
+        menuSections = $('.menu__section');
 
-        function openMenu(menuPart) {
-            $(".menu__" + menuPart).on("click", function(e){
-                e.preventDefault();
-                $menu.html("");
+    for (var i = 0; i < menuSections.length; i += 1) {
+      $(menuSections[i]).removeClass(menuSection + 'active');
+    }
 
-                if (menuPart === "main-dishes") {
-                    menuPart = "mainDishes";
-                }
+    $('.' + menuSection + item).addClass(menuSection + 'active');
 
-                showMenuItems(menuPart);
-                $(".menu__nav a").removeClass("active");
-                $(".menu__" + menuPart).addClass("active");
-            });
-        }
-    };
+  }
 
-        xhttp.open("GET", "../menu.json", true);
-        xhttp.send();
 
-        /* Preventing default behavior for submit button in form */
-        $(".contact__form").on("submit", function(e){
-            e.preventDefault();
-        });
+  /*** FORM ***/
+  /* Preventing default behavior for submit button in form */
+  $('.contact__form').on('submit', function(e){
+    e.preventDefault();
+  });
 })();

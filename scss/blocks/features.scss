@@ -1,0 +1,47 @@
+.features {
+  font-size: 1.8rem;
+  text-align: center;
+
+  background: {
+    size: contain;
+    image: url(../img/bg-yellow.png);
+  }
+}
+
+.features__header {
+  margin-bottom: 2rem;
+  font-size: inherit;
+  font-family: Merriweather-Bold, serif;
+  text-transform: uppercase;
+}
+
+.features__tea,
+.features__noodle,
+.features__sweet {
+  margin: {
+    top: 6rem;
+    bottom: 8rem;
+  }
+}
+
+.features__tea::before,
+.features__noodle::before,
+.features__sweet::before {
+  content: "";
+
+  display: block;
+  width: 100%;
+  margin: {
+    left: auto;
+    right: auto;
+    bottom: 2.5rem;
+  }
+
+  background: url(../img/spritesheet.png) no-repeat;
+}
+
+.features__tea::before { @include sprite(176, -6, 106); }
+
+.features__noodle::before { @include sprite(5, 5, 87); }
+
+.features__sweet::before { @include sprite(102, 2, 64); }

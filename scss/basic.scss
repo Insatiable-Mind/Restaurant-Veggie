@@ -1,0 +1,166 @@
+$grey: #3c3c3c;
+$lightgrey: #f8f8f8;
+
+%frame {
+  border: .1rem solid $grey !important;
+
+  transition: border 0.65s ease-in;
+}
+
+@mixin sprite($position-x, $position-y, $width) {
+  width: $width + px; 
+  height: 7.9rem;
+
+  background-position: (-$position-x + px) (-$position-y + px); 
+}
+
+@mixin placeholder($state) {
+  input:#{$state}::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    opacity: 0.6;
+
+    transition: {
+      property: opacity;
+      duration: 0.3s;
+      timing-function: ease-in;
+    }
+  }
+  input:#{$state}::-moz-placeholder { /* Firefox 19+ */
+    opacity: 0.6;
+
+    transition: {
+      property: opacity;
+      duration: 0.3s;
+      timing-function: ease-in;
+    }
+  }
+  input:#{$state}:-ms-input-placeholder { /* IE 10+ */
+    opacity: 0.6;
+
+    transition: {
+      property: opacity;
+      duration: 0.3s;
+      timing-function: ease-in;
+    }
+  }
+  input:#{$state}:-moz-placeholder { /* Firefox 18- */
+    opacity: 0.6;
+
+    transition: {
+      property: opacity;
+      duration: 0.3s;
+      timing-function: ease-in;
+    }
+  }
+}
+
+@font-face {
+  font-family: Merriweather-Regular;
+  src: url('../fonts/web/merriweather-regular-webfont.woff2') format('woff2'),
+       url('../fonts/web/merriweather-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Merriweather-Light;
+  src: url('../fonts/web/merriweather-light-webfont.woff2') format('woff2'),
+       url('../fonts/web/merriweather-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Merriweather-Italic;
+  src: url('../fonts/web/merriweather-italic-webfont.woff2') format('woff2'),
+       url('../fonts/web/merriweather-italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Merriweather-Bold;
+  src: url('../fonts/web/merriweather-bold-webfont.woff2') format('woff2'),
+       url('../fonts/web/merriweather-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body { height: 100%; }
+
+html {
+  font-size: 62.5%;
+  color: $grey;
+}
+
+body {
+  font-family: Merriweather-Light, serif;
+  font-size: 1.6rem;
+  line-height: 1.3;
+}
+
+.container {
+  width: 100%;
+  padding: {
+    right: 9.2%;
+    left: 9.2%;
+  }
+}
+
+.section-header {
+  position: relative;
+
+  margin: {
+    left: auto;
+    right: auto;
+    bottom: 10.5rem;
+  }
+
+  font-size: 4rem;
+  text-align: center;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+
+    display: block;
+    width: 25.3rem;
+    height: 3.3rem;
+    margin-left: -125px;
+
+    background: {
+      image: url(../img/decoration.png);
+      repeat: no-repeat;
+      size: contain;
+    }
+  }
+}
+
+ul { list-style-type: none; }
+
+a {
+  display: block;
+  padding: 1rem;
+
+  color: $grey;
+
+  border: .1rem solid transparent;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    @extend %frame;
+    color: $grey;
+    text-decoration: none;
+  }
+}
+
+a.active {
+  @extend %frame;
+  color: $grey;
+  text-decoration: none;
+}
