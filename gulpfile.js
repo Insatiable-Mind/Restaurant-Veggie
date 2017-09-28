@@ -1,39 +1,39 @@
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var watch = require("gulp-watch");
-var csso = require("gulp-csso");
-var concat = require("gulp-concat");
-var browserSync = require("browser-sync").create();
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    watch = require('gulp-watch'),
+    csso = require('gulp-csso'),
+    rename = require('gulp-rename'),
+    autoprefixer = require('gulp-autoprefixer'),
+    browserSync = require('browser-sync').create();
 
 /* Static Server + watching scss/html files */
-gulp.task("serve", ["sass"], function() {
+gulp.task('serve', ['build'], function() {
 
   browserSync.init({
-    server: "./"
+    server: './'
   });
 
-  gulp.watch("*.html").on("change", browserSync.reload);
-  gulp.watch("sass/**/*.scss", ["sass"]).on("change", browserSync.reload);
+  gulp.watch('*.html').on('change', browserSync.reload);
+  gulp.watch('scss/**/*.scss', ['build']);
 });
 
-/* Compile Sass into CSS & auto-inject into browsers */
-gulp.task("sass", function() {
-  return gulp.src("sass/*.scss")
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest("css"))
-    .pipe(browserSync.stream());
-});
-
-/* Concatenate and minify CSS */
-gulp.task("css:build", function() {
-  gulp.watch("css/*.css").on("change", function() {
-    return gulp.src("css/*.css")
-      .pipe(concat("style.concat.css"))
+/* Compile Sass into CSS, autoprefix, compress & auto-inject into browsers */
+gulp.task('build', function() {
+  gulp.watch('scss/**/*.scss').on('change', function() {
+    return gulp.src('scss/style.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(autoprefixer({
+            browsers: ['last 3 versions'],
+            cascade: false
+      }))
+      .pipe(gulp.dest('css'))
+      .pipe(rename({ suffix: '.min' }))
       .pipe(csso({
         comments: false
       }))
-    .pipe(gulp.dest("css_result"));
+      .pipe(gulp.dest('css'))
+      .pipe(browserSync.stream());
   });
 });
 
-gulp.task("default", ["serve", "css:build"]);
+gulp.task('default', ['build', 'serve']);

@@ -1,63 +1,106 @@
 (function(){
-  /* Adding and removing active class for main-nav buttons */
-  $(".main-header__navmenu a").on("click", function(e){
-    e.preventDefault();
+  /*** HEADER ***/
+  /* Adding and removing active class for nav links */
+  $('.top-header__navmenu a').on('click', function(e){
+    // e.preventDefault();
 
-    $(".main-header__navmenu a").removeClass("active");
-    this.addClass("active");
+    $('.top-header__navmenu a').removeClass('active');
+    $(this).addClass('active');
   });
 
+  var header = '.top-header__navmenu-row',
+      HeaderTop = $(header).offset().top,
+      hh = HeaderTop + 30;
 
-  // /* Loading menu */
-  // var xhttp = new XMLHttpRequest();
-  // xhttp.onreadystatechange = function() {
-  //   if (this.readyState == 4 && this.status == 200) {
-  //     var $menu = $(".menu__item"),
-  //       json = JSON.parse(this.responseText);
+  /*
+  Changing the top nav bar presentation
+  (function code is not written by myself, I've just changed it slightly
+  for this site)
+  */
+  $(window).scroll(function(){
+    if ( $(window).scrollTop() > HeaderTop ) {
+      if ($(window).scrollTop() > hh) {
+        $(header).css({background:'#f7f7f8'});
+        $('.top-header__navmenu').css({paddingTop: '1rem', paddingBottom: '.5rem'});
+      } else {
+        $('.top-header__navmenu').css({paddingTop: '5.5rem', paddingBottom: '0'});
+      }
+    } else {
+      $(header).css({background:'none'});
+    }
+  });
 
-  //     showMenuItems("starters");
+  /*
+  Smooth scrolling to sections of the site from the top menu
+  (function smoothScroll code is not written by myself, I've just changed it slightly
+  for this site)
+  */
+  smoothScroll('#home');
+  smoothScroll('#specials');
+  smoothScroll('#about');
+  smoothScroll('#menu');
+  smoothScroll('#contact');
 
-  //     openMenu("starters");
-  //     openMenu("main-dishes");
-  //     openMenu("desserts");
-  //     openMenu("drinks"); 
-  //   }
+  function smoothScroll(target) {
+    $('a[href^="' + target + '"]').bind('click.smoothscroll', function (e) {
+     e.preventDefault();
 
-  //   function showMenuItems(menuPart) {
-  //     var $list = $("<ul></ul>"),
-  //       $listItem = null;
+    var target = this.hash,
+     $target = $(target);
 
-  //     for(var i = 0; i < Object.keys(json[menuPart]).length; i++) {
-  //       $listItem = $("<li class='col-sm-6'></li>");
-  //       $listItem.append("<span class='menu__item-header'>" + json[menuPart][i].name + "</span>")
-  //         .append("<span class='menu__item-price'>" + json[menuPart][i].price + "</span>")
-  //         .append("<span class='menu__item-ingredients'>" + json[menuPart][i].ingredients + "</span>")
-  //         .appendTo($list);
-  //       $list.appendTo($menu);
-  //     }
-  //   }
+    $('html, body').stop().animate({
+     'scrollTop': $target.offset().top
+     }, 1000, 'swing', function () {
+     window.location.hash = target;
+     });
+  });
+  }
 
-  //   function openMenu(menuPart) {
-  //     $(".menu__nav-" + menuPart).on("click", function(e){
-  //       e.preventDefault();
-  //       $menu.html("");
 
-  //       if (menuPart === "main-dishes") {
-  //         menuPart = "mainDishes";
-  //       }
+  /*** MENU ***/
+  /* Adding and removing active class for nav links */
+  $('.menu__list a').on('click', function(e){
+    e.preventDefault();
 
-  //       showMenuItems(menuPart);
-  //       $(".menu__nav a").removeClass("active");
-  //       $(".menu__nav-" + menuPart).addClass("active");
-  //     });
-  //   }
-  // };
+    $('.menu__list a').removeClass('active');
+    $(this).addClass('active');
+  });
 
-  //   xhttp.open("GET", "../menu.json", true);
-  //   xhttp.send();
+  var navItem = '.menu__nav-item_',
+      starters = 'starters',
+      mainDishes = 'main-dishes',
+      desserts = 'desserts',
+      drinks = 'drinks';
 
-    /* Preventing default behavior for submit button in form */
-    $(".contact__form").on("submit", function(e){
-      e.preventDefault();
-    });
+  $(navItem + starters).on('click', function() {
+    showMenuItem(starters);
+  });
+  $(navItem + mainDishes).on('click', function() {
+    showMenuItem(mainDishes);
+  });
+  $(navItem + desserts).on('click', function() {
+    showMenuItem(desserts);
+  });
+  $(navItem + drinks).on('click', function() {
+    showMenuItem(drinks);
+  });
+
+  function showMenuItem(item) {
+    var menuSection = 'menu__section_',
+        menuSections = $('.menu__section');
+
+    for (var i = 0; i < menuSections.length; i += 1) {
+      $(menuSections[i]).removeClass(menuSection + 'active');
+    }
+
+    $('.' + menuSection + item).addClass(menuSection + 'active');
+
+  }
+
+
+  /*** FORM ***/
+  /* Preventing default behavior for submit button in form */
+  $('.contact__form').on('submit', function(e){
+    e.preventDefault();
+  });
 })();
