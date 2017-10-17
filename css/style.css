@@ -513,6 +513,9 @@ a.active {
   margin-bottom: 3rem;
   line-height: 5rem; }
 
+.footer__bottom-copyright {
+  text-align: center; }
+
 .footer__bottom-social {
   float: right; }
 
